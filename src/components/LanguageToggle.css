@@ -1,0 +1,46 @@
+.language-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid var(--accent-gold);
+  border-radius: 30px;
+  padding: 4px 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lang-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.lang-toggle-btn.gujarati-text {
+  font-family: var(--font-gujarati);
+  font-size: 1rem;
+  padding-bottom: 2px;
+}
+
+.lang-toggle-btn.active {
+  color: var(--text-primary);
+  background: rgba(212, 175, 55, 0.15); /* light gold */
+}
+
+.lang-toggle-divider {
+  width: 1px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 4px;
+}

@@ -1,0 +1,150 @@
+.welcome-hero {
+  min-height: 100vh;
+  /* Use dvh for modern mobile browsers to account for address bars */
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+
+  /* Fallback color should match the image's background (usually white or off-white for floral frames) */
+  background-color: #ffffff;
+  background-image: url('/hero-bg.jpg');
+  /* Use cover for desktop to fill the screen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional overlay if the image is too bright and text is hard to read. */
+.welcome-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+  padding: 20px;
+  /* Use this to move the entire content block up or down */
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.ganesha-wrapper {
+  /* Reduced negative margin to give a bit more breathing room between image and text */
+  margin-bottom: -30px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.ganesha-img {
+  width: 140px;
+  /* Perfectly sized for desktop */
+  height: auto;
+  object-fit: contain;
+  /* Removed border/shadow as requested */
+}
+
+.tagline {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.couple-names {
+  font-family: var(--font-script, 'Great Vibes', cursive);
+  font-size: 6rem;
+  line-height: 1.1;
+  margin: 0;
+  /* Replaced white text-shadow with a darker drop-shadow for better contrast on light backgrounds */
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.3));
+  /* Ensure it wraps cleanly or stays on one line nicely */
+  word-spacing: 5px;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(to right, #bf953f, #d4af37, #b38728, #e6c27a, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 768px) {
+  .welcome-hero {
+    /* Swap to the new portrait image for mobile phones */
+    background-image: url('/hero-bg-mobile.jpg');
+    /* Because it is a portrait image, we can use cover to perfectly fill the screen! */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .couple-names {
+    /* Smaller font size so names fit much better on the screen */
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+
+  .tagline {
+    /* Slightly smaller tagline for mobile */
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-content {
+    /* Use this to move the content up or down specifically on mobile phones! */
+    margin-top: -100px;
+    margin-left: 20px;
+  }
+
+  .ganesha-img {
+    width: 150px;
+    /* Scale down beautifully for mobile */
+  }
+
+  .ganesha-wrapper {
+    /* Reduced negative margin to give more space */
+    margin-bottom: -15px;
+  }
+}
+
+/* --- ANIMATIONS --- */
+.elegant-entrance {
+  animation: elegantEntrance 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes elegantEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}

@@ -1,0 +1,113 @@
+:root {
+  --bg-primary: #FDFBF7;
+  --bg-secondary: #F4EBE1;
+  --text-primary: #800020; /* Deep Maroon */
+  --text-secondary: #4A4A4A;
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #F3E5AB;
+
+  --font-script: 'Great Vibes', cursive;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  /* 
+   Available Gujarati Fonts (Change 'Farsan' to any of these to test):
+   - 'Farsan' (Casual, handwriting style - current)
+   - 'Rasa' (Elegant, traditional serif)
+   - 'Shrikhand' (Bold, thick, retro, very stylized)
+   - 'Kumar One' (Extremely decorative, sharp display font)
+   - 'Baloo Bhai 2' (Soft, rounded, modern and friendly)
+  */
+  --font-gujarati: 'Farsan', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.script-font {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.gujarati-text {
+  font-family: var(--font-gujarati);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(to right, #BF953F, #D4AF37, #B38728, #E6C27A, #AA771C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-border {
+  border: 2px solid var(--accent-gold);
+  border-radius: 8px;
+}

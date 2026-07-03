@@ -1,0 +1,121 @@
+.countdown-section {
+  background-color: var(--bg-secondary); /* Fallback */
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Removed background-attachment: fixed; so flowers align to the section perfectly */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3); /* Match other sections overlay exactly */
+  z-index: 1;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  background-color: var(--bg-primary); /* White block */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.4); /* Subtle gold border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.time-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(212, 175, 55, 0.8);
+}
+
+.time-value {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary); /* Maroon text */
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.finale-footer {
+  margin-top: 20px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  width: 80%;
+  text-align: center;
+}
+
+.finale-footer p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .countdown-section {
+    background-image: url('/hero-bg-mobile.jpg');
+  }
+  
+  .countdown-container {
+    gap: 15px;
+  }
+  
+  .time-block {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .time-value {
+    font-size: 2rem;
+  }
+  
+  .time-label {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+  
+  .finale-footer {
+    width: 100%;
+    padding-top: 40px;
+  }
+}
