@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ganeshaImg from '../assets/ganesha.png';
 import './WelcomeHero.css';
 
-export default function WelcomeHero({ coupleNames = "Manish & Shargam", tagline = "Together Forever", language = 'en' }) {
+export default function WelcomeHero({ coupleNames = "Meet & Shargam", tagline = "Together Forever", language = 'en' }) {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
