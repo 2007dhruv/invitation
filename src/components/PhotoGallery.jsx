@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence, useScroll } from 'framer-motion';
-import firstImage from '../assets/first-image.avif';
+import img1 from '../assets/1.jpeg';
+import img2 from '../assets/2.jpeg';
+import img3 from '../assets/3.jpeg';
+import img4 from '../assets/4.jpeg';
+import img5 from '../assets/5.jpeg';
 import './PhotoGallery.css';
 
 export default function PhotoGallery({ language = 'en' }) {
@@ -9,11 +13,11 @@ export default function PhotoGallery({ language = 'en' }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const photos = [
-    { id: 1, src: firstImage, caption: language === 'gu' ? "અમારો પહેલો અધ્યાય" : "Our First Chapter" },
-    { id: 2, src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800", caption: language === 'gu' ? "હંમેશા સાથે" : "Together Always" },
-    { id: 3, src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800", caption: language === 'gu' ? "એક પ્રેમ કથા" : "A Love Story" },
-    { id: 4, src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800", caption: language === 'gu' ? "કાયમ માટે" : "Forever & Always" },
-    { id: 5, src: "https://images.unsplash.com/photo-1544078750-662235d925d4?auto=format&fit=crop&q=80&w=800", caption: language === 'gu' ? "ભવિષ્યમાં" : "Into the Future" },
+    { id: 1, src: img1, caption: language === 'gu' ? "અમારો પહેલો અધ્યાય" : "Our First Chapter" },
+    { id: 2, src: img2, caption: language === 'gu' ? "હંમેશા સાથે" : "Together Always" },
+    { id: 3, src: img3, caption: language === 'gu' ? "એક પ્રેમ કથા" : "A Love Story" },
+    { id: 4, src: img4, caption: language === 'gu' ? "કાયમ માટે" : "Forever & Always" },
+    { id: 5, src: img5, caption: language === 'gu' ? "ભવિષ્યમાં" : "Into the Future" },
   ];
 
   // Check for mobile viewport
