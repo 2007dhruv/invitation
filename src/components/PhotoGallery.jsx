@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence, useScroll } from 'framer-motion';
-import img1 from '../assets/1.jpeg';
+import img1 from '../assets/1.jpg';
 import img2 from '../assets/2.jpeg';
-import img3 from '../assets/3.jpeg';
-import img4 from '../assets/4.jpeg';
-import img5 from '../assets/5.jpeg';
+import img3 from '../assets/3.jpg';
+import img4 from '../assets/4.jpg';
+import img5 from '../assets/5.jpg';
 import './PhotoGallery.css';
 
 export default function PhotoGallery({ language = 'en' }) {
@@ -14,7 +14,7 @@ export default function PhotoGallery({ language = 'en' }) {
 
   const photos = [
     { id: 1, src: img1, caption: language === 'gu' ? "અમારો પહેલો અધ્યાય" : "Our First Chapter" },
-    { id: 2, src: img2, caption: language === 'gu' ? "હંમેશા સાથે" : "Together Always" },
+    // { id: 2, src: img2, caption: language === 'gu' ? "હંમેશા સાથે" : "Together Always" },
     { id: 3, src: img3, caption: language === 'gu' ? "એક પ્રેમ કથા" : "A Love Story" },
     { id: 4, src: img4, caption: language === 'gu' ? "કાયમ માટે" : "Forever & Always" },
     { id: 5, src: img5, caption: language === 'gu' ? "ભવિષ્યમાં" : "Into the Future" },

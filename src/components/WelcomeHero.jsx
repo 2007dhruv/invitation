@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ganeshaImg from '../assets/ganesha.png';
 import './WelcomeHero.css';
 
-export default function WelcomeHero({ coupleNames = "Meet & Sargam", tagline = "Together Forever", language = 'en' }) {
+export default function WelcomeHero({ coupleNames = "Sunil & Ishita", tagline = "Together Forever", language = 'en' }) {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function WelcomeHero({ coupleNames = "Meet & Sargam", tagline = "
   return (
     <section className="welcome-hero">
       {/* This container handles the scroll away parallax effect */}
-      <div 
+      <div
         className="parallax-container"
         style={{
           transform: `translateY(${scrollY * 0.4}px)`,
@@ -27,8 +27,8 @@ export default function WelcomeHero({ coupleNames = "Meet & Sargam", tagline = "
       >
         {/* This container handles the initial entrance effect */}
         <div className="hero-content elegant-entrance">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
@@ -42,9 +42,9 @@ export default function WelcomeHero({ coupleNames = "Meet & Sargam", tagline = "
           ) : (
             <h3 className="tagline" style={{ fontSize: '1.2rem' }}>Engagement Ceremony</h3>
           )}
-          
+
           <h1 className="couple-names gold-gradient-text script-font" style={{ marginTop: '20px' }}>{coupleNames}</h1>
-          
+
           <div style={{ marginTop: '15px' }}>
             {language === 'gu' ? (
               <h3 className="gujarati-text" style={{ fontSize: '1.5rem', marginBottom: '5px' }}>સાથે હંમેશા</h3>

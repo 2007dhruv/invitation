@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './EnvelopeReveal.css';
 
-export default function EnvelopeReveal({ date = "August 25, 2026", language = 'en' }) {
+export default function EnvelopeReveal({ date = "October 20, 2026", language = 'en' }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollData, setScrollData] = useState({ y: 0, opacity: 0 });
   const sectionRef = useRef(null);

@@ -10,7 +10,7 @@ export default function CountdownTimer({ targetDate = new Date('2026-12-25T00:00
     target: sectionRef,
     offset: ["start start", "end start"]
   });
-  
+
   const sectionOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const sectionY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const sectionBlur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(10px)"]);
@@ -66,8 +66,8 @@ export default function CountdownTimer({ targetDate = new Date('2026-12-25T00:00
   intervals.forEach((interval) => {
     if (timeLeft[interval] !== undefined) {
       timerComponents.push(
-        <motion.div 
-          key={interval} 
+        <motion.div
+          key={interval}
           className="time-block"
           variants={{
             hidden: { opacity: 0, scale: 0.8, y: 20 },
@@ -83,7 +83,7 @@ export default function CountdownTimer({ targetDate = new Date('2026-12-25T00:00
 
   return (
     <section ref={sectionRef} className="countdown-section section-padding">
-      <motion.div 
+      <motion.div
         className="container text-center"
         style={{
           opacity: sectionOpacity,
@@ -96,27 +96,27 @@ export default function CountdownTimer({ targetDate = new Date('2026-12-25T00:00
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={{
-            visible: { 
+            visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.15 } 
+              transition: { staggerChildren: 0.15 }
             },
             hidden: { opacity: 0 }
           }}
           className="countdown-content"
         >
-          <motion.h2 
-            className={language === 'gu' ? 'gujarati-text' : 'script-font'} 
+          <motion.h2
+            className={language === 'gu' ? 'gujarati-text' : 'script-font'}
             style={{ fontSize: language === 'gu' ? '3rem' : '3.5rem', marginBottom: '50px', color: 'var(--text-primary)' }}
             variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
           >
             {t.title}
           </motion.h2>
-          
+
           <div className="countdown-container">
-            {timerComponents.length ? timerComponents : <span className="script-font" style={{fontSize: '2.5rem', color: 'var(--text-primary)'}}>It's time!</span>}
+            {timerComponents.length ? timerComponents : <span className="script-font" style={{ fontSize: '2.5rem', color: 'var(--text-primary)' }}>It's time!</span>}
           </div>
 
-          <motion.div 
+          <motion.div
             className="finale-footer"
             variants={{
               hidden: { opacity: 0, y: 20 },
