@@ -11,7 +11,7 @@ const VenueDetails = ({ language }) => {
     target: sectionRef,
     offset: ["start start", "end start"]
   });
-  
+
   const sectionOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const sectionY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const sectionBlur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(10px)"]);
@@ -23,16 +23,16 @@ const VenueDetails = ({ language }) => {
   const content = {
     en: {
       title: "The Venue",
-      name: "The Grand Palace",
-      address: "123 Celebration Avenue, Royal City",
+      name: "Shree Swaminarayan Gurukul",
+      address: "Dhebar Rd, Bhakti Nagar, Rajkot ",
       time: "7:00 PM Onwards",
       buttonText: "Open in Maps",
       note: "Join us in celebrating this joyous occasion."
     },
     gu: {
       title: "સ્થળ",
-      name: "ધ ગ્રાન્ડ પેલેસ",
-      address: "૧૨૩ સેલિબ્રેશન એવન્યુ, રોયલ સિટી",
+      name: "શ્રી સ્વામિનારાયણ ગુરુકુળ",
+      address: "ઢેબર રોડ, ભક્તિનગર, રાજકોટ",
       time: "સાંજે ૭:૦૦ કલાકથી",
       buttonText: "નકશો જુઓ",
       note: "આ આનંદના અવસર પર અમારી સાથે જોડાઓ."
@@ -43,7 +43,7 @@ const VenueDetails = ({ language }) => {
 
   return (
     <section ref={sectionRef} className="venue-section section-padding">
-      <motion.div 
+      <motion.div
         className="container"
         style={{
           opacity: sectionOpacity,
@@ -51,7 +51,7 @@ const VenueDetails = ({ language }) => {
           filter: sectionBlur
         }}
       >
-        <motion.div 
+        <motion.div
           className="venue-content"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const VenueDetails = ({ language }) => {
             <p className={language === 'gu' ? 'gujarati-text' : ''} style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '30px' }}>
               {t.address}
             </p>
-            
+
             <div className="venue-datetime">
               <p className={language === 'gu' ? 'gujarati-text' : ''}>{t.time}</p>
             </div>
@@ -81,10 +81,10 @@ const VenueDetails = ({ language }) => {
               {t.note}
             </p>
 
-            <a 
-              href={mapsUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="directions-button"
             >
               <Navigation size={20} />
