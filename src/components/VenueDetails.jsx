@@ -18,7 +18,7 @@ const VenueDetails = ({ language }) => {
 
   // Using a universal Google Maps link format.
   // This will open the Google Maps app if installed on the user's phone.
-  const mapsUrl = "https://www.google.com/maps/search/?api=1&query=The+Grand+Palace";
+  const mapsUrl = "https://maps.app.goo.gl/fgV6ztSk8yamsC9t5";
 
   const content = {
     en: {
